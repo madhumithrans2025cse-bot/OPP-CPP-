@@ -4,56 +4,26 @@ using namespace std;
 
 int main()
 {
-    while(1)
+    int units;
+    double bill = 0;
+
+    cout << "Enter Units : ";
+    cin >> units;
+
+    if (units <= 100)
     {
-
-    cout<<endl<<"-------- MENU ---------"<<endl;
-    cout<<"1.Buy Product"<<endl;
-    cout<<"2.Sell product"<<endl;
-    cout<<"3.calculate profit and loss"<<endl;
-    cout<<"4.Exit"<<endl<<endl;
-    cout<<"Enter your choice : ";
-    cin>>choice;
-
-
-    switch (choice)
+        cout << "Free units, you need not pay!" << endl;
+    }
+    else if (units > 100 && units <= 200)
     {
-    case 1:
-        int add;
-        cout<<"Enter the Buying cost of Product : ";
-        cin>>add;
-        buy += add;
-        break;
-
-
-    case 2:
-
-        int del;
-        cout<<"Enter the selling cost of Product : ";
-        cin>>del;
-        sell += del;
-        break;
-
-    case 3:
-        cost = sell - buy;
-
-        if(cost > 0)
-        {
-            cout<<"Your profit is : "<<cost<<endl;
-        }
-        else if(cost < 0)
-        {
-            cout<<"Your loss is : "<<cost<<endl;
-        }
-        else
-            cout<<"No profit or loss"<<endl;
-        break;
-
-    case 4:
-        return 0;
-
-    default:
-        cout<<"Invalid Input!"<<endl;
+        bill = (units - 100) * 2.5;
+        cout << "You need to pay " << bill << endl;
     }
+    else
+    {
+        bill = (100 * 2.5) + (units - 200) * 3.5;
+        cout << "You need to pay " << bill << endl;
     }
+
+    return 0;
 }
